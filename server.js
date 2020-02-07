@@ -9,6 +9,6 @@ app.use(express.static('public'));
 // handle api calls from here
 app.use('/reservations', reservationsRouter);
 
-app.listen(port, () =>{
+app.listen(port, () => {
   console.log(`Server app listening on port ${port}!`);
 });

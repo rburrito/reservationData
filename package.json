@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "seedTestData": "rm -f *.test.sqlite3 && sequelize-cli db:migrate && sequelize-cli db:seed:all",
+    "test": "NODE_ENV=test npm run seedTestData && npx jest",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
