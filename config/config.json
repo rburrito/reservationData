@@ -1,0 +1,13 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "data.development.sqlite3"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "data.test.sqlite3"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
+  }
+}
