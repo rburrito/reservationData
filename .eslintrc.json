@@ -1,0 +1,16 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": "error",
+    "no-var": "error",
+    "indent": ["error", 2],
+    "prefer-arrow-callback": "error",
+    "eol-last" : "error"
+  }
+}
