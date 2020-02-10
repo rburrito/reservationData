@@ -11,16 +11,14 @@
 1PM to 10PM and use json info to remove slots.
 -->
 <form id="reserveTime" method="post" action="/reservations">
-    <fieldset class="dateChoice">
           Date <select class"dateChoice" id="date">
-          </select> </fieldset>
-  <fieldset class="timeChoice">
+          </select> <br>
         Time <select class"timeChoice" id="time">
-        </select>
-</fieldset>
-  <fieldset class="input"> Name <input type="text" id="name"></fieldset>
-  <button type="submit">Make reservations</button>
+        </select><br>
+  Name <input type="text" id="name"> <br>
+    <input type="submit" value="submit" method="post">Make reservations</button>
 </form>
+
   <script src="./js/utils.js" defer></script>
   <script src="./js/main.js" defer></script>
 </body>

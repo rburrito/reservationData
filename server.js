@@ -8,8 +8,9 @@ const bodyParser=require('body-parser');
 app.use(express.static('public'));
 
 // handle api calls from here
+app.use(bodyParser.urlencoded({ extended:false }));
+
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
 app.use('/reservations', reservationsRouter);
 
 app.listen(port, () => {

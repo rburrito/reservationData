@@ -25,3 +25,7 @@ test("testing getResTime", ()=>{
 test("testing changeReservationFormat", ()=>{
   expect(changeReservationFormat("2020-02-21T22:00:00.000Z")).toBe("Fri Feb 21 2020 17:00:00 GMT-0500 (Eastern Standard Time)");
 })
+
+test("testing convertToDoubleDigits", ()=>{
+  expect(convertToDoubleDigits(3)).toBe("03");
+})

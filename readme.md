@@ -1,4 +1,5 @@
 # Simple Node Boilerplate
+This is a reservation site for Rburrito's Restaurant. Please make a reservation for the greatest burritos alive.
 
 ## Introduction
 
@@ -47,4 +48,3 @@ The Reservation class in this example allows you to define instance methods and 
 `npm test` should be all you need to run tests. This will read in and eval `utils.js` with all the functions inside of it. Try to keep DOM dependent code out of that file since jest has no DOM. `npm test` will also delete and seed the test database, and allow you to test your models. Your controllers probably wouldn't need testing in an app like this since they use the model methods for CRUD operations.
 
 For an application of this complexity ensuring that database operations through models work well is important. Models are mostly your own code.
-
