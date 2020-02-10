@@ -10,18 +10,15 @@
 <!--form with GET request to get reservation times, make a route for a page that tells you all the available reservation times
 1PM to 10PM and use json info to remove slots.
 -->
-<form id="reserveTime" method="post" action="/">
-  <div id="reservation times"></div>
-  <div id="dateChoice">
+<form id="reserveTime" method="post" action="/reservations">
     <fieldset class="dateChoice">
           Date <select class"dateChoice" id="date">
-          </select>
-  </div>
-  <div class="timeChoice"><fieldset class="timeChoice">
+          </select> </fieldset>
+  <fieldset class="timeChoice">
         Time <select class"timeChoice" id="time">
         </select>
-</fieldset></div>
-  <div class="input"><fieldset class="input"> Name <input type="text" id="name"></fieldset></div>
+</fieldset>
+  <fieldset class="input"> Name <input type="text" id="name"></fieldset>
   <button type="submit">Make reservations</button>
 </form>
   <script src="./js/utils.js" defer></script>
