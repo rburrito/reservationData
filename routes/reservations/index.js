@@ -9,7 +9,7 @@ router.get('/', async (req,res) => {
 // make post request to database for reservation
 router.post('/', async (req, res)=>{
   console.log(req.body)
-
+/*
   const date  = new Date(req.body.date + " "+ req.body.time).toISOString();
   console.log(date);
   const id =await Reservation.all().length;
@@ -17,7 +17,7 @@ router.post('/', async (req, res)=>{
   let reservation = new Reservation.create({
       id: id,
       name: req.body.name,
-      slot: date
+      slot: date,
       createdAt: new Date(),
       updatedAt: new Date()
   }).then(console.log("successfully created"));
@@ -28,7 +28,7 @@ router.post('/', async (req, res)=>{
     }
     res.send("Okay!")
   });
-  
+*/
 res.send("Okay")
 });
 
