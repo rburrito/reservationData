@@ -55,7 +55,6 @@ function reduceReservations(data){
   }
 //  console.log(dates)
   }
-  console.log(dates);
 return dates;
 }
 
