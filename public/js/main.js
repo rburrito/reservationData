@@ -11,7 +11,7 @@ fetch("/reservations")
 .then((response) => response.json())
 
 reservationData = reservations.then((data)=>{
-   console.log(data);
+   console.log(data)
   let reservationData= reduceReservations(data);
   console.log(reservationData);
   console.log(Object.keys(reservationData));
