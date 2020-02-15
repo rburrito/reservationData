@@ -7,7 +7,7 @@ let form = document.getElementById('reserveTime');
 let name = document.getElementById('name');
 
 const reservations =
-fetch("http://localhost:3000/reservations")
+fetch("/reservations")
 .then((response) => response.json())
 
 reservationData = reservations.then((data)=>{
@@ -47,9 +47,9 @@ reservationData = reservations.then((data)=>{
       method: "POST",
       headers: {
       'Content-Type': 'application/json'
-      // 'Content-Type':, 'application/x-www-form-urlencoded',
     },
       body: JSON.stringify(formData)
     });
+
     return await response.json();
   });
