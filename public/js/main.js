@@ -36,8 +36,10 @@ reservationData = reservations.then((data)=>{
   //reduceReservations(data);
 });
 
-
+//submit form data (commented out code not required.)
   form.addEventListener('submit', async function(data){
+    console.log(data);
+    /*
     data.preventDefault();
     let formData =  {
       name: name.value,
@@ -52,5 +54,5 @@ reservationData = reservations.then((data)=>{
       body: JSON.stringify(formData)
     });
 
-    return await response.json();
+    return await response.json(); */
   });
