@@ -11,6 +11,7 @@ fetch("/reservations")
 .then((response) => response.json())
 
 reservationData = reservations.then((data)=>{
+   console.log(data);
   let reservationData= reduceReservations(data);
   const resDay = changeReservationFormat(data[0].slot).toDateString();
   const timeslots=Object.keys(createTimes());
