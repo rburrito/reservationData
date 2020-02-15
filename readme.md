@@ -1,4 +1,4 @@
-# Simple Node Boilerplate
+# Reservations for Rburrito's Restaurant
 This is a reservation site for Rburrito's Restaurant. Please make a reservation for the greatest burritos alive.
 
 ## Introduction
