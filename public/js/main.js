@@ -4,6 +4,8 @@
 let date = document.getElementById('date');
 let time = document.getElementById('time');
 let form = document.getElementById('reserveTime');
+let name = document.getElementById('name');
+
 const reservations =
 fetch("http://localhost:3000/reservations")
 .then((response) => response.json())
@@ -34,19 +36,20 @@ reservationData = reservations.then((data)=>{
 });
 
 
-  form.onSubmit= async function(data){
+  form.addEventListener('submit', async function(data){
+    data.preventDefault();
+    let formData =  {
+      name: name.value,
+      time: time.value,
+      date: date.value
+    };
     const response =await fetch("/reservations", {
       method: "POST",
       headers: {
-        "Content-Type":"application/json"
-      },
-      mode: 'cors',
-      cache: 'no-cache',
-      credentials: 'same-origin',
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(data)
-    }, console.log(data));
-
+      'Content-Type': 'application/json'
+      // 'Content-Type':, 'application/x-www-form-urlencoded',
+    },
+      body: JSON.stringify(formData)
+    });
     return await response.json();
-  }
+  });

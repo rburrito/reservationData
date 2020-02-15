@@ -8,12 +8,12 @@ router.get('/', async (req,res) => {
 
 // make post request to database for reservation
 router.post('/', async (req, res)=>{
-  console.log(req.body)
-/*
+  console.log(req.body);
+
   const date  = new Date(req.body.date + " "+ req.body.time).toISOString();
-  console.log(date);
-  const id =await Reservation.all().length;
-  console.log(id);
+  const reservations = await Reservations.all().length;
+
+  /*
   let reservation = new Reservation.create({
       id: id,
       name: req.body.name,
@@ -28,8 +28,8 @@ router.post('/', async (req, res)=>{
     }
     res.send("Okay!")
   });
-*/
-res.send("Okay")
+  */
+res.send("Okay");
 });
 
 module.exports = router;
