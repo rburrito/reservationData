@@ -7,7 +7,6 @@ function createTimes(){
     reservationTimes[i.toString()+':30']=10;
   }
   }
-  console.log(reservationTimes);
   return reservationTimes;
 }
 
@@ -27,14 +26,12 @@ function convertToDoubleDigits(number){
 
 function getResTime(reservationDate){
   let resTime=convertToCivTime(reservationDate.getHours())+":"+convertToDoubleDigits(reservationDate.getMinutes());
-console.log("ResDate: "+ reservationDate + " ResTime: "+resTime);
   return resTime;
 
 }
 
 function changeReservationFormat(data){
   const newDate=new Date(data);
-  console.log("New "+newDate)
   return newDate;
 }
 
