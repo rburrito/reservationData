@@ -7,10 +7,11 @@ let form = document.getElementById('reserveTime');
 let name = document.getElementById('name');
 
 const reservations =
-fetch("http://localhost:3000/reservations")
+fetch("/reservations")
 .then((response) => response.json())
 
 reservationData = reservations.then((data)=>{
+   console.log(data);
   let reservationData= reduceReservations(data);
   const resDay = changeReservationFormat(data[0].slot).toDateString();
   const timeslots=Object.keys(createTimes());
@@ -47,9 +48,9 @@ reservationData = reservations.then((data)=>{
       method: "POST",
       headers: {
       'Content-Type': 'application/json'
-      // 'Content-Type':, 'application/x-www-form-urlencoded',
     },
       body: JSON.stringify(formData)
     });
+
     return await response.json();
   });
