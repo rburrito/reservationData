@@ -13,6 +13,7 @@ router.post('/', async (req, res)=>{
   const date  = new Date(req.body.date + " "+ req.body.time).toISOString();
 
   const id= Math.ceil(Math.random()*165)
+
     let reservation = new Reservation({
         id: id,
         name: req.body.name,
@@ -21,20 +22,10 @@ router.post('/', async (req, res)=>{
         updatedAt: new Date()
     });
 
-    console.log("Reservation info: " +reservation.dataValues);
+    console.log("Reservation info: " + req.body.name + ' '+ req.body.time + ' '+ req.body.date);
 
     reservation.save()
-    console.log(req.body.name + " was saved!")
-/*  reservation.save(function(err){
-    console.log("inside save!")
-    if(err){
-      res.send("Error: " + err);
-    }
-    res.send("Okay");
-
-  }); */
-  console.log("Response: "+ res);
-res.send("Fred was saved!")
+  res.redirect("/");
   });
 /*
   reservation.save(function(err){

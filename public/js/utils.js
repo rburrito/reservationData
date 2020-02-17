@@ -1,15 +1,46 @@
 // define your functions like this so they're testable
+
+function createFutureReservationDates(){
+  let datesForReservation =[];
+  for (let i=0; i< 21; i++){
+      let lateDate =new Date(Date.now() + 1000 /*sec*/ * 60 /*min*/ * 60 /*hour*/ * 24 /*day*/ * i)
+      //let newDate = today.getMonth().toString() + " month "+ newday + " year " + today.getFullYear();
+      datesForReservation.push(lateDate.toDateString())
+  }
+  return datesForReservation;
+}
+
 function createTimes(){
   let reservationTimes={};
   for(let i=1; i<10;i++){
+    let fullHour = i.toString()+':00';
+    let halfHour = i.toString()+':30';
     reservationTimes[i.toString()+':00']=10;
     if (i!==9){
     reservationTimes[i.toString()+':30']=10;
   }
   }
-  console.log(reservationTimes);
   return reservationTimes;
 }
+
+function reduceTimes(keys, values, timeObject){
+  let reservationTimes=[];
+//  console.log("keys: "+keys)
+  for(let i=1; i<10;i++){
+    let fullHour = i.toString()+':00';
+    let halfHour = i.toString()+':30';
+    if (timeObject[fullHour] > 0){
+      reservationTimes.push(fullHour)
+    }
+
+    if (timeObject[halfHour] > 0){
+      reservationTimes.push(halfHour)
+    }
+
+  }
+  return reservationTimes;
+}
+
 
 function convertToCivTime(hour){
   if (hour > 12){
@@ -27,14 +58,12 @@ function convertToDoubleDigits(number){
 
 function getResTime(reservationDate){
   let resTime=convertToCivTime(reservationDate.getHours())+":"+convertToDoubleDigits(reservationDate.getMinutes());
-console.log("ResDate: "+ reservationDate + " ResTime: "+resTime);
   return resTime;
 
 }
 
 function changeReservationFormat(data){
   const newDate=new Date(data);
-  console.log("New "+newDate)
   return newDate;
 }
 
