@@ -17,26 +17,37 @@ reservationData = reservations.then((data)=>{
 //  console.log(Object.keys(reservationData));
 
   let day = Object.keys(reservationData); //array
-  let timeObject= reservationData[day];
-  let timeKeys = Object.keys(timeObject);
-  let timeValues = Object.values(timeObject);
+//  let timeObject= reservationData[day];
+//  let timeKeys = Object.keys(timeObject);
+//  let timeValues = Object.values(timeObject);
   const timeslotsAllOpen=Object.keys(createTimes());
-  console.log(reduceTimes(timeKeys, timeValues, timeObject)); // function for specific days
+//
   let futureReservationDates = createFutureReservationDates();
-
+   date.innerHTML="<option id='Choose Date'> Choose date </option> <br>"
    for (let i=0; i<futureReservationDates.length;i++){
      date.innerHTML+="<option id='dateslot"+0+"'>" + futureReservationDates[i]+ "</option> <br>"
+     for(let j=0; j<day.length; j++){
+
+      if (futureReservationDates[i]==day[j]){
+        console.log(day[j]);
+           let timeObject=reservationData[day[j]];
+           let specificTimes =reduceTimes(timeObject);
+
+           date.addEventListener("click",()=>{
+             time.innerHTML="";
+             for (let k=0; k<specificTimes.length;k++){
+               console.log(specificTimes)
+               time.innerHTML+="<option id='timeslot" +k+"'>" + specificTimes[k] +"</option> <br>";
+             }
+           });
+
+      }
+     }
+
+
+
    }
 
-
-
-  for(let i=0; i< timeslotsAllOpen.length; i++){
-    time.innerHTML+="<option id='timeslot" +i+"'>" + timeslotsAllOpen[i] +"</option> <br>";
-  }
-
-//  console.log(dateArray)
-  //date.value=JSON.stringify(reduceReservations(data));
-  //reduceReservations(data);
 });
 
 
