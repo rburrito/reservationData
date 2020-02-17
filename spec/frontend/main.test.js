@@ -31,7 +31,3 @@ test("testing convertToDoubleDigits", ()=>{
   expect(convertToDoubleDigits(10)).toBe("10");
   expect(convertToDoubleDigits(0)).toBe("00");
 });
-
-
-test("testing reduceTimes", ()=>{
-});

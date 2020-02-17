@@ -20,9 +20,11 @@ function createTimes(){
     reservationTimes[i.toString()+':30']=10;
   }
   }
+  console.log(JSON.stringify(reservationTimes));
   return reservationTimes;
 }
 
+/*
 function reduceTimes(timeObject){
   let reservationTimes=[];
 
@@ -38,9 +40,10 @@ function reduceTimes(timeObject){
     }
 
   }
+  console.log(JSON.stringify(reservationTimes));
   return reservationTimes;
 }
-
+*/
 
 function convertToCivTime(hour){
   if (hour > 12){
