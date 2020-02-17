@@ -23,9 +23,9 @@ function createTimes(){
   return reservationTimes;
 }
 
-function reduceTimes(keys, values, timeObject){
+function reduceTimes(timeObject){
   let reservationTimes=[];
-//  console.log("keys: "+keys)
+
   for(let i=1; i<10;i++){
     let fullHour = i.toString()+':00';
     let halfHour = i.toString()+':30';
