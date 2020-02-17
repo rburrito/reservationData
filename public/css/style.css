@@ -1,0 +1,4 @@
+#timeBox {
+  display: flex;
+  flex-direction: row;
+}

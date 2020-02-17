@@ -28,4 +28,10 @@ test("testing changeReservationFormat", ()=>{
 
 test("testing convertToDoubleDigits", ()=>{
   expect(convertToDoubleDigits(3)).toBe("03");
-})
+  expect(convertToDoubleDigits(10)).toBe("10");
+  expect(convertToDoubleDigits(0)).toBe("00");
+});
+
+
+test("testing reduceTimes", ()=>{
+});
