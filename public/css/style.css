@@ -17,7 +17,8 @@ form {
   margin: auto;
   border-style: solid;
   border-color: white;
-  padding: 0.5vw;
+  border-radius: 5%;
+  padding: 1vw;
 }
 
 select {
