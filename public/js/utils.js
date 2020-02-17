@@ -53,7 +53,7 @@ function convertToDoubleDigits(number){
   if (number.toString().length<2){
     number='0'+number;
   }
-  return number
+  return number.toString();
 }
 
 function getResTime(reservationDate){

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="./css/style.css" type="text/css"/>
   <title>RESERVATIONS</title>
 </head>
 <body>
@@ -14,8 +15,8 @@
 <form id="reserveTime" method="post" action="/reservations">
           Date <select class"dateChoice" id="date" name="date">
           </select> <br>
-        Time <select class"timeChoice" id="time" name="time">
-        </select> <div id="info"></div><br>
+      <div id="timeBox">  Time <select class"timeChoice" id="time" name="time">
+      </select> <div id="info"></div> </div>
   Name <input type="text" id="name" name="name"> <br>
     <input type="submit" method="post"></button>
 </form>

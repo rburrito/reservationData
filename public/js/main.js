@@ -1,6 +1,5 @@
 // jest won't error out on DOM calls.
 
-// console.log(document.querySelector('p').innerHTML);
 let date = document.getElementById('date');
 let time = document.getElementById('time');
 let form = document.getElementById('reserveTime');
@@ -25,34 +24,23 @@ reservationData = reservations.then((data)=>{
    for (let i=0; i<futureReservationDates.length;i++){
      date.innerHTML+="<option id='dateslot"+i+"'>" + futureReservationDates[i]+ "</option> <br>"
      date.addEventListener('click', ()=>{
-    //   console.log(reservationData.hasOwnProperty(futureReservationDates[i]), futureReservationDates[i]);
        time.innerHTML="";
-       if (reservationData.hasOwnProperty(futureReservationDates[i])){
-         console.log(futureReservationDates[i],true)
-         let timeObject=reservationData[futureReservationDates[i]];
-         let specificTimes =reduceTimes(timeObject);
-          // console.log(date.value, specificTimes)
-           for (let k=0; k < specificTimes.length;k++){
-             time.innerHTML+="<option id='timeslot" +k+"'>" + specificTimes[k] +"</option> <br>";
-           }
-           time.addEventListener("click", ()=>{
-             if (timeObject[i]<1){
-               info.innerHTML=timeObject[1]+" is not available";
-             }
-           });
-       }
-
-       else {
-         console.log(futureReservationDates[i], false)
-        // console.log(date.value, timeslotsAllOpen);
          for (let i=0; i< timeslotsAllOpen.length;i++){
            time.innerHTML+="<option id='timeslot" +i+"'>" + timeslotsAllOpen[i] +"</option> <br>";
          }
-       }
-
      });
-
    } // end of first loop
+
+time.addEventListener("click", ()=>{
+  if (reservationData.hasOwnProperty(date.value)){
+    if (reservationData[date.value][time.value]>0){
+      info.innerHTML="";
+    }
+    else{
+      info.innerHTML=time.value+" on " + date.value +" is not available.";
+    }
+  }
+});
 
 });
 
