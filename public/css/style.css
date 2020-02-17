@@ -1,8 +1,45 @@
-#timeBox {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+body {
+ background: linear-gradient(to right, #020024, #090979, #00d4ff);
+ text-align: center;
+ color: white;
+ font-family: "Rock Salt", sans-serif;
+}
+
+#formData {
   width: 100vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 25vw;
+  margin: auto;
+  border-style: solid;
+  border-color: white;
+}
+
+select {
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2.75vh;
+}
+
+#info {
+  font-size: 2.75vh;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+input {
+  font-size: 2.75vh;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.Box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 #info {

@@ -22,8 +22,6 @@ router.post('/', async (req, res)=>{
         updatedAt: new Date()
     });
 
-    console.log("Reservation info: " + req.body.name + ' '+ req.body.time + ' '+ req.body.date);
-
     reservation.save()
   res.redirect("/");
   });
