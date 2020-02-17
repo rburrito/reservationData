@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Reservations</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,18 +13,19 @@
 <!--form with GET request to get reservation times, make a route for a page that tells you all the available reservation times
 1PM to 10PM and use json info to remove slots.
 -->
-<h2>Make reservations!</h2>
+<h1>Make reservations!</h1>
 <div id="formData">
 <form id="reserveTime" method="post" action="/reservations">
       <div class="date Box">
           Date <select class="dateChoice" id="date" name="date">
           </select> </div>
       <div class="time Box">  Time <select class"timeChoice" id="time" name="time">
-      </select> <div id="info"></div> </div>
+      </select> </div>
       <div class="name Box">
   Name <input type="text" id="name" name="name"> </div> <br>
     <input type="submit" method="post">
-</form>
+</form><br>
+<div id="info"></div>
 </div>
 <script src="./js/utils.js" defer></script>
 <script src="./js/main.js" defer></script>

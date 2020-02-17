@@ -17,18 +17,16 @@ form {
   margin: auto;
   border-style: solid;
   border-color: white;
+  padding: 0.5vw;
 }
 
 select {
-  text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 2.75vh;
 }
 
 #info {
-  font-size: 2.75vh;
-  font-family: 'Source Sans Pro', sans-serif;
-
+  font-size: 3vh;
 }
 
 input {
