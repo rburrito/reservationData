@@ -12,7 +12,6 @@ fetch("/reservations")
 
 reservationData = reservations.then((data)=>{
   let reservationData= reduceReservations(data);
-  console.log(reservationData);
 
   let day = Object.keys(reservationData);
 
@@ -37,7 +36,7 @@ time.addEventListener("click", ()=>{
       info.innerHTML="";
     }
     else{
-      info.innerHTML=time.value+" on " + date.value +" is not available.";
+      info.innerHTML= " "+time.value+" on " + date.value +" is not available.";
     }
   }
 });
