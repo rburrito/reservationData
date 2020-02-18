@@ -25,9 +25,6 @@ router.post('/', async (req, res)=>{
     reservation.save()
   res.redirect("/");
   });
-/*
-  reservation.save(function(err){
 
-}); */
 
 module.exports = router;
