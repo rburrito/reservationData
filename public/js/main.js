@@ -20,15 +20,18 @@ reservationData = reservations.then((data)=>{
   let futureReservationDates = createFutureReservationDates();
    date.innerHTML="<option id='Choose Date'> Choose date </option> <br>"
 
+// to do
+// take event listener outside loop
    for (let i=0; i<futureReservationDates.length;i++){
      date.innerHTML+="<option id='dateslot"+i+"'>" + futureReservationDates[i]+ "</option> <br>"
-     date.addEventListener('click', ()=>{
-       time.innerHTML="";
-         for (let i=0; i< timeslotsAllOpen.length;i++){
-           time.innerHTML+="<option id='timeslot" +i+"'>" + timeslotsAllOpen[i] +"</option> <br>";
-         }
-     });
    } // end of first loop
+
+   date.addEventListener('click', ()=>{
+     time.innerHTML="";
+       for (let i=0; i< timeslotsAllOpen.length;i++){
+         time.innerHTML+="<option id='timeslot" +i+"'>" + timeslotsAllOpen[i] +"</option> <br>";
+       }
+   });
 
 time.addEventListener("click", ()=>{
   if (reservationData.hasOwnProperty(date.value)){
