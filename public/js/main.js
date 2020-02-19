@@ -27,7 +27,7 @@ reservationData = reservations.then((data)=>{
    } // end of first loop
 
    date.addEventListener('click', ()=>{
-     time.innerHTML="";
+     time.innerHTML=" time.innerHTML=<option id='timeslot'> Choose time</option> <br>";
        for (let i=0; i< timeslotsAllOpen.length;i++){
          time.innerHTML+="<option id='timeslot" +i+"'>" + timeslotsAllOpen[i] +"</option> <br>";
        }
@@ -35,7 +35,8 @@ reservationData = reservations.then((data)=>{
 
 time.addEventListener("click", ()=>{
   if (reservationData.hasOwnProperty(date.value)){
-    if (reservationData[date.value][time.value]>0){
+    console.log(reservationData[date.value][time.value]);
+    if (reservationData[date.value][time.value]>0 || reservationData[date.value][time.value]===undefined){
       info.innerHTML="";
     }
     else{
