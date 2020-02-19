@@ -20,11 +20,9 @@ reservationData = reservations.then((data)=>{
   let futureReservationDates = createFutureReservationDates();
    date.innerHTML="<option id='Choose Date'> Choose date </option> <br>"
 
-// to do
-// take event listener outside loop
    for (let i=0; i<futureReservationDates.length;i++){
      date.innerHTML+="<option id='dateslot"+i+"'>" + futureReservationDates[i]+ "</option> <br>"
-   } // end of first loop
+   }
 
    date.addEventListener('click', ()=>{
      info.innerHTML="";
@@ -36,7 +34,6 @@ reservationData = reservations.then((data)=>{
 
 time.addEventListener("click", ()=>{
   if (reservationData.hasOwnProperty(date.value)){
-    console.log(reservationData[date.value][time.value]);
     if (reservationData[date.value][time.value]>0 || reservationData[date.value][time.value]===undefined){
       info.innerHTML="";
     }
@@ -50,10 +47,8 @@ form.addEventListener('submit',(data)=>{
   if(reservationData[date.value][time.value]<1){
     data.preventDefault();
     info.innerHTML="Your reservation could not be completed. Please select another time."
-    console.log("unsuccessful")
   } else {
     info.innerHTML="You successfully reserved a table for "+date.value+" at " +time.value+".";
-    console.log("successful");
   }
 });
 

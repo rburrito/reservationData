@@ -23,7 +23,7 @@ router.post('/', async (req, res)=>{
     });
 
     reservation.save()
-  res.send("Thank you for your reservation on "+req.body.date+ " at "+ req.body.time +" was successful.");
+  res.send("Your reservation for "+req.body.date+ " at "+ req.body.time +" was successful.");
   });
 
 
