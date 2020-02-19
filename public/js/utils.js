@@ -4,7 +4,6 @@ function createFutureReservationDates(){
   let datesForReservation =[];
   for (let i=0; i< 21; i++){
       let lateDate =new Date(Date.now() + 1000 /*sec*/ * 60 /*min*/ * 60 /*hour*/ * 24 /*day*/ * i)
-      //let newDate = today.getMonth().toString() + " month "+ newday + " year " + today.getFullYear();
       datesForReservation.push(lateDate.toDateString())
   }
   return datesForReservation;
@@ -20,30 +19,8 @@ function createTimes(){
     reservationTimes[i.toString()+':30']=10;
   }
   }
-  console.log(JSON.stringify(reservationTimes));
   return reservationTimes;
 }
-
-/*
-function reduceTimes(timeObject){
-  let reservationTimes=[];
-
-  for(let i=1; i<10;i++){
-    let fullHour = i.toString()+':00';
-    let halfHour = i.toString()+':30';
-    if (timeObject[fullHour] > 0){
-      reservationTimes.push(fullHour)
-    }
-
-    if (timeObject[halfHour] > 0){
-      reservationTimes.push(halfHour)
-    }
-
-  }
-  console.log(JSON.stringify(reservationTimes));
-  return reservationTimes;
-}
-*/
 
 function convertToCivTime(hour){
   if (hour > 12){
