@@ -27,6 +27,7 @@ reservationData = reservations.then((data)=>{
    } // end of first loop
 
    date.addEventListener('click', ()=>{
+     info.innerHTML="";
      time.innerHTML=" time.innerHTML=<option id='timeslot'> Choose time</option> <br>";
        for (let i=0; i< timeslotsAllOpen.length;i++){
          time.innerHTML+="<option id='timeslot" +i+"'>" + timeslotsAllOpen[i] +"</option> <br>";
@@ -45,7 +46,20 @@ time.addEventListener("click", ()=>{
   }
 });
 
+form.addEventListener('submit',(data)=>{
+  if(reservationData[date.value][time.value]<1){
+    data.preventDefault();
+    info.innerHTML="Your reservation could not be completed. Please select another time."
+    console.log("unsuccessful")
+  } else {
+    info.innerHTML="You successfully reserved a table for "+date.value+" at " +time.value+".";
+    console.log("successful");
+  }
 });
+
+});
+
+
 
 
   /* form.addEventListener('submit', async function(data){ // code not required. I was missing name value in HTML tags
