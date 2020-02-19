@@ -1,5 +1,7 @@
 body {
- background: linear-gradient(to right, #020024, #090979, #00d4ff);
+// background: linear-gradient(to right, #020024, #090979, #00d4ff);
+ background: linear-gradient(90deg,  #020024, #182848, #4b6cb7);
+// background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
  text-align: center;
  color: white;
  font-family: "Rock Salt", sans-serif;
